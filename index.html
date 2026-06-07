@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f9a8d4" />
+    <title>❤️ ¿Lo intentamos de nuevo?</title>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════╗
+    ║  🌹  ¿Lo intentamos de nuevo?  –  index.html             ║
+    ║                                                           ║
+    ║  ARCHIVOS DEL PROYECTO:                                   ║
+    ║    index.html  ← estás aquí (estructura)                  ║
+    ║    style.css   ← colores, animaciones, diseño             ║
+    ║    script.js   ← interactividad (botones, corazones…)     ║
+    ║                                                           ║
+    ║  CÓMO AGREGAR FOTOS:                                      ║
+    ║    1. Pon tus fotos en esta misma carpeta.                ║
+    ║    2. Abre script.js y edita las dos primeras líneas:     ║
+    ║         const FOTO_IZQUIERDA = 'ella.jpg';               ║
+    ║         const FOTO_DERECHA   = 'el.jpg';                 ║
+    ║    3. Guarda y recarga el navegador. ¡Listo!              ║
+    ╚═══════════════════════════════════════════════════════════╝
+  -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Corazones decorativos de fondo – generados por script.js -->
+    <div id="bg-hearts" aria-hidden="true"></div>
+
+    <!-- ══ CONTENIDO PRINCIPAL ══════════════════════════════════ -->
+    <main id="main-card">
+      <!-- Fotos de la pareja (aparecen solo si las configuras en script.js) -->
+      <section id="photos-section" aria-label="Nuestras fotos"></section>
+
+      <!-- Tarjeta con el mensaje principal -->
+      <div id="message-card">
+        <h1 id="main-title">❤️‍🩹¿Lo intentamos de nuevo? ❤️‍🩹</h1>
+        <p id="subtitle">
+          Porque sé que tú y yo no hemos cerrado este capítulo tan hermoso, y creo que nuestra
+          historia merece otro intento.
+        </p>
+      </div>
+
+      <!-- Zona de botones: solo contiene el botón Sí.
+         El botón No se agrega directamente al <body> desde script.js
+         para que pueda moverse libremente sin afectar este layout. -->
+      <div id="buttons-area">
+        <button id="btn-yes" class="btn btn-yes" onclick="handleYes()">Sí 💖</button>
+        <!-- El botón No aparecerá aquí visualmente pero vive en el body -->
+      </div>
+
+      <!-- Mensaje que aparece cuando el usuario intenta tocar el botón No -->
+      <p id="fail-message" role="alert" aria-live="polite"></p>
+    </main>
+
+    <!-- ══ PANTALLA DE ÉXITO (oculta hasta que clic en Sí) ══════ -->
+    <div id="success-screen" role="dialog" aria-modal="true">
+      <div id="success-emoji">❤️‍🩹</div>
+      <h2 id="success-title">Sabia que lo tuyo con el no era en serio y que aun me quieres ❤️</h2>
+      <p id="success-subtitle">
+        Esto que sentimos es muy grande y a nuestra historia le falta mucho por contar, te amo y eso
+        nunca va a cambiar pase lo que pase, eres lo mejor que me pudo pasar en la vida y no te
+        quiero perder así de fácil . 🌹
+      </p>
+    </div>
+
+    <!-- JavaScript al final para que el DOM esté listo al ejecutarse -->
+    <script src="script.js"></script>
+  </body>
+</html>
